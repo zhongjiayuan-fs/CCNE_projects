@@ -52,7 +52,7 @@ for t=1:time_point
             nei=adjacent_network{na}{n};
             x = input_data(str2num(center),:);
             y = input_data(str2num(nei),:);
-            out_x2y = MI_cnet(x',y',k);
+            out_x2y = Rewiring_cnet(x',y',k);
             num=num+1;
             localnet_weigtht_matrix(num,1:cell_num(t))=out_x2y;
         end

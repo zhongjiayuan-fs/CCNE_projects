@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import loadmat
 
-# 载入 entropy_matrix
+# Load entropy_matrix
 mat = loadmat('pericyte_to_neuron.mat')
 entropy = mat['entropy_matrix']    # shape: (genes, 623, 6)
 
@@ -12,11 +12,11 @@ time_point = 6
 top_ratio  = 0.05
 total_nodes = entropy.shape[0]
 
-# 计算 SH和result
-SH = [ ]    # 会变成 (6, max(cell_num)) 的矩阵
+# Calculate SH and result
+SH = [ ]    
 for t in range(time_point):
     te = entropy[:, :cell_num[t], t]           # genes × cells_at_t
-    # 对每个细胞 c 排序并取前 5% 基因之和
+    # For each cell 𝑐 genes are ranked and the top 5% are summed.
     SH_t = [
         np.sum( np.sort(te[:,c])[::-1][:int(total_nodes*top_ratio)] )
         for c in range(cell_num[t])

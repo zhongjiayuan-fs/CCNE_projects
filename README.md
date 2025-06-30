@@ -6,9 +6,9 @@ Calculating cell-specific causal network entropy (CCNE)
 
 input data: pericyte_to_neuron.xlsx, Undirected_ppi_network.txt
 output data: pericyte_to_neuron.mat
-running pipeline: CCNE.m
+running pipeline: CCNE.m or CCNE_python.py
 
 Displaying result
 
 input data: pericyte_to_neuron.mat
-running pipeline: CCNE_main.m
+running pipeline: CCNE_main.m or CCNE_main_python.py
